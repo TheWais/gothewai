@@ -6,6 +6,24 @@
   <title>The WAI — Inteligencia Artificial Aplicada</title>
   <meta name="description" content="Ayudamos a empresas a optimizar procesos y desarrollar soluciones con inteligencia artificial. Sin tecnicismos. Con resultados concretos. Buenos Aires, Argentina.">
   <link rel="canonical" href="https://www.gothewai.com/">
+  <link rel="alternate" hreflang="es" href="https://www.gothewai.com/">
+  <link rel="alternate" hreflang="en" href="https://www.gothewai.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.gothewai.com/en/">
+
+  <!-- Idioma pertinente: preferencia elegida (localStorage) > idioma del
+       navegador. No aplica a crawlers para no romper el indexado. -->
+  <script>
+    (function () {
+      try {
+        if (/bot|crawl|spider|slurp|bing|duckduck|baidu|yandex|lighthouse|headless/i.test(navigator.userAgent)) return;
+        var here = location.pathname.indexOf('/en') === 0 ? 'en' : 'es';
+        var pref = localStorage.getItem('wai-lang');
+        var want = pref || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
+        if (want !== here) location.replace(want === 'en' ? '/en/' : '/');
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
@@ -61,9 +79,9 @@
     body.preload main, body.preload .nav, body.preload .footer, body.preload .mobmenu { display: none; }
     @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
   </style>
-  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet';window.__cssLoaded=1">
+  <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet';window.__cssLoaded=1">
   <noscript>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <style>.intro{display:none}body.preload{overflow:auto}body.preload main,body.preload .nav,body.preload .footer{display:block}.appear,.reveal{opacity:1!important;transform:none!important}.line__inner{transform:none!important}</style>
   </noscript>
 
@@ -104,6 +122,11 @@
         <a href="#proceso">Cómo trabajamos</a>
         <a href="#contacto">Contacto</a>
       </nav>
+      <div class="lang" aria-label="Idioma">
+        <a href="/" data-lang="es" class="is-current" aria-current="true">ES</a>
+        <span aria-hidden="true">/</span>
+        <a href="/en/" data-lang="en" hreflang="en">EN</a>
+      </div>
       <a class="btn btn--dark" href="https://wa.me/5491157045808?text=Hola%2C%20estoy%20interesado%20en%20los%20servicios%20de%20The%20Wai" target="_blank" rel="noopener">
         Hablemos
         <span class="btn__box" aria-hidden="true">
@@ -133,7 +156,14 @@
           <svg class="btn__arrow btn__arrow--next" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
         </span>
       </a>
-      <span class="mono-label mono-label--dark">Buenos Aires, Argentina — 2026</span>
+      <div class="mobmenu__meta">
+        <span class="mono-label mono-label--dark">Buenos Aires, Argentina — 2026</span>
+        <div class="lang lang--dark" aria-label="Idioma">
+          <a href="/" data-lang="es" class="is-current" aria-current="true">ES</a>
+          <span aria-hidden="true">/</span>
+          <a href="/en/" data-lang="en" hreflang="en">EN</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -415,6 +445,6 @@
     <div class="footer__glow" aria-hidden="true"></div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>

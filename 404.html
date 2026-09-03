@@ -93,14 +93,30 @@
   <main class="wrap">
     <span class="label fade" id="lbl">/Página no encontrada</span>
     <h1 class="fade">404<span class="dot">.</span></h1>
-    <p class="fade">Esta página no existe. El futuro de tu empresa, en cambio, ya está acá.</p>
-    <a class="btn fade" href="/">
-      Volver al inicio
+    <p class="fade" id="txt">Esta página no existe. El futuro de tu empresa, en cambio, ya está acá.</p>
+    <a class="btn fade" href="/" id="home">
+      <span id="btnTxt">Volver al inicio</span>
       <span class="btn__box" aria-hidden="true">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 7L7 17M7 17h9M7 17V8"/></svg>
       </span>
     </a>
   </main>
+  <script>
+    // Versión en inglés según preferencia guardada o idioma del navegador
+    (function () {
+      try {
+        var pref = localStorage.getItem('wai-lang');
+        var wantEn = pref ? pref === 'en' : (navigator.language || '').toLowerCase().indexOf('es') !== 0;
+        if (!wantEn) return;
+        document.documentElement.lang = 'en';
+        document.title = '404 — The WAI';
+        document.getElementById('lbl').textContent = '/Page not found';
+        document.getElementById('txt').textContent = "This page doesn't exist. The future of your business, however, is already here.";
+        document.getElementById('btnTxt').textContent = 'Back to home';
+        document.getElementById('home').href = '/en/';
+      } catch (e) {}
+    })();
+  </script>
   <script>
     // Efecto scramble en el label, como en el sitio
     (function () {

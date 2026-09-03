@@ -57,13 +57,17 @@
   /* ============================================================
      MENU MOBILE — hamburguesa, overlay, cierre por link/Escape
      ============================================================ */
+  const isEn = document.documentElement.lang === 'en';
   const burger = document.getElementById('burger');
   const mobmenu = document.getElementById('mobmenu');
   if (burger && mobmenu) {
     const setMenu = (open) => {
       body.classList.toggle('menu-open', open);
       burger.setAttribute('aria-expanded', String(open));
-      burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      burger.setAttribute(
+        'aria-label',
+        open ? (isEn ? 'Close menu' : 'Cerrar menú') : (isEn ? 'Open menu' : 'Abrir menú')
+      );
     };
     burger.addEventListener('click', () => setMenu(!body.classList.contains('menu-open')));
     mobmenu.querySelectorAll('a').forEach((a) =>
@@ -111,6 +115,16 @@
       a.addEventListener('mouseenter', () => scramble(a));
     });
   }
+
+  /* ============================================================
+     IDIOMA — la elección manual del selector queda guardada y le
+     gana a la detección automática del navegador
+     ============================================================ */
+  document.querySelectorAll('[data-lang]').forEach((a) => {
+    a.addEventListener('click', () => {
+      try { localStorage.setItem('wai-lang', a.dataset.lang); } catch (e) {}
+    });
+  });
 
   /* ============================================================
      RELOJ — hora de Buenos Aires en vivo (nav y footer)
