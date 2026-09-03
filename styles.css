@@ -194,27 +194,37 @@ a:focus-visible {
   padding: 0.5rem 0;
 }
 .nav__links a:hover { color: var(--text); }
-/* ---------- selector de idioma ---------- */
-.lang {
+/* ---------- selector de idioma: control segmentado tipo pill ---------- */
+.nav__right {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+}
+.lang {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   letter-spacing: 0.05em;
 }
 .lang a {
   color: var(--dim);
   text-decoration: none;
-  padding: 0.4rem 0;
-  transition: color 0.2s ease;
+  padding: 0.34rem 0.75rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 .lang a:hover { color: var(--text); }
-.lang a.is-current { color: var(--text); }
-.lang span { color: var(--border); }
+.lang a.is-current { background: var(--dark); color: #fff; }
+.lang--dark { border-color: rgba(255, 255, 255, 0.22); }
 .lang--dark a { color: #9a9da0; }
-.lang--dark a:hover, .lang--dark a.is-current { color: #fff; }
-.lang--dark span { color: rgba(255, 255, 255, 0.2); }
+.lang--dark a:hover { color: #fff; }
+.lang--dark a.is-current { background: #fff; color: var(--dark); }
+/* en el menú mobile, tamaño de tap cómodo */
+.mobmenu .lang a { padding: 0.55rem 1.15rem; font-size: 0.8rem; }
 
 /* ---------- burger (solo mobile) ---------- */
 .nav__burger {
@@ -303,14 +313,6 @@ body.menu-open .mobmenu__links a:nth-child(3) { transition-delay: 0.24s; }
 }
 body.menu-open .mobmenu__foot { opacity: 1; transform: translateY(0); }
 .mobmenu__cta { background: #fff; }
-.mobmenu__meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  width: 100%;
-}
 
 /* ---------- hero ---------- */
 .hero { padding-top: clamp(7rem, 14vh, 10rem); }
