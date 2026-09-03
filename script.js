@@ -127,23 +127,6 @@
   });
 
   /* ============================================================
-     RELOJ — hora de Buenos Aires en vivo (nav y footer)
-     ============================================================ */
-  const clocks = document.querySelectorAll('.js-clock');
-  if (clocks.length) {
-    const fmt = new Intl.DateTimeFormat('es-AR', {
-      timeZone: 'America/Argentina/Buenos_Aires',
-      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false,
-    });
-    const tickClock = () => {
-      const t = fmt.format(new Date());
-      clocks.forEach((c) => { c.textContent = t; });
-    };
-    tickClock();
-    setInterval(tickClock, 1000);
-  }
-
-  /* ============================================================
      CHAT — la conversación se escribe una sola vez: el primer
      mensaje ya está puesto, aparecen las dos respuestas y al final
      queda fijo un typing azul (el cliente por escribir de nuevo)
