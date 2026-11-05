@@ -20,8 +20,8 @@ const COPY = {
   cert_insignia: "",
 
   home: {
-    momento: "sé que tengo que invertir en IA",
-    titulo: "Sabés que tenés que invertir en IA. ¿Y después qué?",
+    momento: "sé que tengo que invertir en inteligencia artificial",
+    titulo: "Sabés que tenés que invertir en inteligencia artificial. ¿Y después qué?",
     bajada: "Después, un sistema andando en tu empresa. No un curso, no una herramienta más.",
     lineas: [
       "Lo que hoy se hace a mano y se repite (pedidos, cobranzas, atención, reportes) lo hace solo.",
@@ -33,23 +33,23 @@ const COPY = {
     video_alt: "Una oficina a las once de la noche, una sola luz prendida; al día siguiente, la planilla se llenó sola."
   },
   m2: { // página /certificado (la clave evita la palabra en el DOM)
-    momento: "gurúes de la IA",
-    titulo: "¿Ya te quemaste con los gurúes de la IA? Probá con alguien certificado.",
+    momento: "gurúes de la inteligencia artificial",
+    titulo: "¿Ya te quemaste con los gurúes de la inteligencia artificial? Probá con alguien certificado.",
     // Titular alternativo (CERTIFICADO = false). Con la llave prendida se usa "titulo".
-    titulo_sin_cert: "¿Ya te quemaste con los gurúes de la IA? Probá con un sistema andando.",
+    titulo_sin_cert: "¿Ya te quemaste con los gurúes de la inteligencia artificial? Probá con un sistema andando.",
     bajada: "Las credenciales se rinden. Después se construye.",
     lineas: [
-      "Un sistema a medida, diseñado por quien construye sistemas con IA en producción, no por quien da charlas.",
+      "Un sistema a medida, diseñado por quien construye sistemas con inteligencia artificial en producción, no por quien da charlas.",
       "Arquitectura documentada, pruebas medibles, revisión humana donde el resultado tiene consecuencias.",
       "Mantenimiento por escrito: cuando se rompe, atendemos nosotros."
     ],
     casos: CASOS,
-    cierre: "Le pedís matrícula a todo el mundo. Pedísela también al que te hace la IA.",
+    cierre: "Le pedís matrícula a todo el mundo. Pedísela también al que te hace la inteligencia artificial.",
     video_alt: "Un escenario con humo y promesas; al día siguiente, en la empresa, el mismo pedido se sigue cargando a mano."
   },
   sistemas: {
     momento: "sistemas andando",
-    titulo: "No tenés que aprender IA. Tenés que tenerla andando.",
+    titulo: "No tenés que aprender inteligencia artificial. Tenés que tenerla andando.",
     bajada: "En dos semanas, con tus datos. Sin que nadie en tu empresa tenga que estudiar.",
     lineas: [
       "Día 1, una charla sobre tu proceso. Día 5, la maqueta con tus datos. Día 14, andando.",
