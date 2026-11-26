@@ -117,6 +117,25 @@
   }
 
   /* ============================================================
+     MEDICIÓN — eventos de conversión hacia Vercel Analytics.
+     Si analytics no está habilitado, los eventos se descartan
+     en silencio: nunca rompe nada.
+     ============================================================ */
+  const track = (name, data) => {
+    try { if (window.va) window.va('event', { name, data }); } catch (e) {}
+  };
+  const sectionOf = (el) => {
+    const s = el.closest('section, header, footer, .mobmenu');
+    return (s && (s.id || s.className.split(' ')[0])) || 'otro';
+  };
+  document.querySelectorAll('a[href^="https://wa.me"]').forEach((a) => {
+    a.addEventListener('click', () => track('cta_whatsapp', { location: sectionOf(a) }));
+  });
+  document.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
+    a.addEventListener('click', () => track('cta_email', { location: sectionOf(a) }));
+  });
+
+  /* ============================================================
      IDIOMA — la elección manual del selector queda guardada y le
      gana a la detección automática del navegador
      ============================================================ */
