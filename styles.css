@@ -327,8 +327,10 @@ body.menu-open .mobmenu__foot { opacity: 1; transform: translateY(0); }
 .hero__title {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(2.9rem, 6.6vw, 5.6rem);
-  line-height: 1;
+  /* titular más largo que el original: escala editorial para que las
+     tres líneas entren sin quebrar en la columna del hero */
+  font-size: clamp(1.9rem, 4.3vw, 3.4rem);
+  line-height: 1.05;
   letter-spacing: -0.04em;
 }
 /* reveal por líneas: cada línea emerge desde una máscara con recorte */
