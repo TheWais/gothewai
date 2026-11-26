@@ -767,6 +767,14 @@ body.ready .line__inner { transform: translateY(0); }
   margin: 2.5rem 0;
 }
 .cta__action { display: flex; }
+.cta__alt { margin-top: 1.5rem; color: var(--dim); font-size: 0.95rem; }
+.cta__alt a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+.cta__alt a:hover { color: var(--blue-2); }
 
 /* ---------- footer (dark) ---------- */
 .footer {
