@@ -118,6 +118,7 @@
     <div class="container nav__inner">
       <a href="#top" class="nav__logo">The WAI<sup>®</sup></a>
       <nav class="nav__links" aria-label="Main navigation">
+        <a href="#proyectos">Projects</a>
         <a href="#servicios">Services</a>
         <a href="#proceso">How we work</a>
         <a href="#contacto">Contact</a>
@@ -145,9 +146,10 @@
   <!-- ============ MENU MOBILE ============ -->
   <div class="mobmenu" id="mobmenu">
     <nav class="mobmenu__links" aria-label="Mobile menu">
-      <a href="#servicios"><span class="mobmenu__num">/01</span>Services</a>
-      <a href="#proceso"><span class="mobmenu__num">/02</span>How we work</a>
-      <a href="#contacto"><span class="mobmenu__num">/03</span>Contact</a>
+      <a href="#proyectos"><span class="mobmenu__num">/01</span>Projects</a>
+      <a href="#servicios"><span class="mobmenu__num">/02</span>Services</a>
+      <a href="#proceso"><span class="mobmenu__num">/03</span>How we work</a>
+      <a href="#contacto"><span class="mobmenu__num">/04</span>Contact</a>
     </nav>
     <div class="mobmenu__foot">
       <div class="lang lang--dark" aria-label="Language">
@@ -256,6 +258,93 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             Scaling only by adding headcount
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section__rule"><span class="section__progress"></span></div>
+        <p class="mono-label scramble">/Projects</p>
+        <div class="section__head">
+          <h2 class="section__title reveal">What we've built</h2>
+          <p class="section__sub reveal" style="--d:.1s">
+            Three systems that show how we take one concrete
+            problem end to end.
+          </p>
+        </div>
+
+        <div class="projects">
+          <article class="project reveal">
+            <div class="project__copy">
+              <p class="mono-label project__kicker">/01 — HR · Operations</p>
+              <h3 class="project__title">Internal requests agent</h3>
+              <p class="project__text"><strong>The problem:</strong> employee requests, leaves and questions pile up across email and chats, while the admin team loses hours sorting and chasing paperwork.</p>
+              <p class="project__text"><strong>The solution:</strong> an agent that receives each request, classifies it, checks the documentation, queries internal systems and routes it to the right workflow. People keep making the decisions; the agent runs the front desk, around the clock.</p>
+              <p class="mono-label project__meta">WhatsApp &amp; email · Internal systems · Human oversight</p>
+            </div>
+            <div class="project__art" aria-hidden="true">
+              <svg viewBox="0 0 200 200" fill="none">
+                <g class="art-float"><rect x="18" y="52" width="30" height="21" rx="5" stroke="#8fc5f2" stroke-width="1.5"/></g>
+                <g class="art-float" style="--ad:.5s"><rect x="18" y="89" width="30" height="21" rx="5" fill="url(#pg1)" opacity=".8"/></g>
+                <g class="art-float" style="--ad:1s"><rect x="18" y="126" width="30" height="21" rx="5" stroke="#b9dcf9" stroke-width="1.5" opacity=".7"/></g>
+                <line class="art-beam" x1="54" y1="100" x2="80" y2="100" stroke="#8fc5f2" stroke-width="1.5" stroke-dasharray="3 6"/>
+                <rect class="art-breathe" x="86" y="86" width="28" height="28" rx="7" fill="url(#pg1)" transform="rotate(45 100 100)"/>
+                <line class="art-beam" x1="118" y1="92" x2="146" y2="70" stroke="#8fc5f2" stroke-width="1.5" stroke-dasharray="3 6" opacity=".7"/>
+                <line class="art-beam" x1="118" y1="108" x2="146" y2="130" stroke="#b9dcf9" stroke-width="1.5" stroke-dasharray="3 6" opacity=".6"/>
+                <circle class="radar-dot" cx="158" cy="66" r="8" fill="url(#pg1)"/>
+                <circle class="radar-ping" cx="158" cy="66" r="8" stroke="#8fc5f2" stroke-width="1.5"/>
+                <circle cx="158" cy="134" r="8" stroke="#8fc5f2" stroke-width="1.5"/>
+                <defs><linearGradient id="pg1" x1="0" y1="0" x2="200" y2="200"><stop stop-color="#d2e9fe"/><stop offset="1" stop-color="#8fc5f2"/></linearGradient></defs>
+              </svg>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project__copy">
+              <p class="mono-label project__kicker">/02 — Sales · Marketing</p>
+              <h3 class="project__title">B2B demand engine</h3>
+              <p class="project__text"><strong>The problem:</strong> manual prospecting — cold lists, little personalization and follow-up that depends on each salesperson's memory.</p>
+              <p class="project__text"><strong>The solution:</strong> a system that identifies target companies, enriches the data, personalizes outreach and sustains follow-up, measuring every step. Your sales team walks into the conversation with the homework already done.</p>
+              <p class="mono-label project__meta">Targeting · Enrichment · Measured follow-up</p>
+            </div>
+            <div class="project__art" aria-hidden="true">
+              <svg viewBox="0 0 200 200" fill="none">
+                <circle class="art-breathe" cx="100" cy="100" r="72" stroke="url(#pg2)" stroke-width="1.5"/>
+                <circle class="art-breathe" style="--ad:.5s" cx="100" cy="100" r="46" stroke="url(#pg2)" stroke-width="1.5" opacity=".6"/>
+                <circle class="art-breathe" style="--ad:1s" cx="100" cy="100" r="22" stroke="url(#pg2)" stroke-width="1.5" opacity=".4"/>
+                <circle class="radar-dot" cx="100" cy="100" r="8" fill="url(#pg2)"/>
+                <circle class="radar-ping" cx="100" cy="100" r="8" stroke="#8fc5f2" stroke-width="1.5"/>
+                <g class="art-block"><circle cx="100" cy="36" r="5" fill="#8fc5f2"/></g>
+                <g class="art-block" style="--ad:1.3s"><circle cx="158" cy="124" r="5" fill="#b9dcf9"/></g>
+                <g class="art-block" style="--ad:2.6s"><circle cx="44" cy="130" r="5" fill="#5ba8e8"/></g>
+                <defs><linearGradient id="pg2" x1="0" y1="0" x2="200" y2="200"><stop stop-color="#8fc5f2"/><stop offset="1" stop-color="#d2e9fe"/></linearGradient></defs>
+              </svg>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project__copy">
+              <p class="mono-label project__kicker">/03 — Content · Media</p>
+              <h3 class="project__title">Content production line</h3>
+              <p class="project__text"><strong>The problem:</strong> hours of recorded material that never become publishable pieces, because editing, subtitling and publishing eat up the team.</p>
+              <p class="project__text"><strong>The solution:</strong> a pipeline that detects the best segments, edits them, subtitles them and leaves them ready to publish. From raw footage to a steady stream of pieces, with human editorial control.</p>
+              <p class="mono-label project__meta">Video · Automated editing · Subtitling</p>
+            </div>
+            <div class="project__art" aria-hidden="true">
+              <svg viewBox="0 0 200 200" fill="none">
+                <rect x="20" y="58" width="160" height="40" rx="9" stroke="url(#pg3)" stroke-width="1.5"/>
+                <g class="art-block"><rect x="28" y="66" width="30" height="24" rx="5" fill="url(#pg3)" opacity=".85"/></g>
+                <g class="art-block" style="--ad:1s"><rect x="64" y="66" width="30" height="24" rx="5" stroke="#8fc5f2" stroke-width="1.5"/></g>
+                <g class="art-block" style="--ad:2s"><rect x="100" y="66" width="30" height="24" rx="5" fill="url(#pg3)" opacity=".5"/></g>
+                <g class="art-block" style="--ad:3s"><rect x="136" y="66" width="30" height="24" rx="5" stroke="#b9dcf9" stroke-width="1.5" opacity=".7"/></g>
+                <line class="art-beam" x1="100" y1="102" x2="100" y2="128" stroke="#8fc5f2" stroke-width="1.5" stroke-dasharray="3 6"/>
+                <g class="art-float"><rect x="68" y="132" width="64" height="34" rx="9" fill="url(#pg3)" opacity=".9"/></g>
+                <defs><linearGradient id="pg3" x1="20" y1="58" x2="180" y2="166"><stop stop-color="#d2e9fe"/><stop offset="1" stop-color="#8fc5f2"/></linearGradient></defs>
+              </svg>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -425,6 +514,7 @@
         </div>
         <div class="footer__col">
           <p class="mono-label mono-label--dark scramble">Navigation</p>
+          <a class="footer__link" href="#proyectos">Projects</a>
           <a class="footer__link" href="#servicios">Services</a>
           <a class="footer__link" href="#proceso">How we work</a>
           <a class="footer__link" href="#contacto">Contact</a>

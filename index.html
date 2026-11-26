@@ -118,6 +118,7 @@
     <div class="container nav__inner">
       <a href="#top" class="nav__logo">The WAI<sup>®</sup></a>
       <nav class="nav__links" aria-label="Navegación principal">
+        <a href="#proyectos">Proyectos</a>
         <a href="#servicios">Servicios</a>
         <a href="#proceso">Cómo trabajamos</a>
         <a href="#contacto">Contacto</a>
@@ -145,9 +146,10 @@
   <!-- ============ MENU MOBILE ============ -->
   <div class="mobmenu" id="mobmenu">
     <nav class="mobmenu__links" aria-label="Menú móvil">
-      <a href="#servicios"><span class="mobmenu__num">/01</span>Servicios</a>
-      <a href="#proceso"><span class="mobmenu__num">/02</span>Cómo trabajamos</a>
-      <a href="#contacto"><span class="mobmenu__num">/03</span>Contacto</a>
+      <a href="#proyectos"><span class="mobmenu__num">/01</span>Proyectos</a>
+      <a href="#servicios"><span class="mobmenu__num">/02</span>Servicios</a>
+      <a href="#proceso"><span class="mobmenu__num">/03</span>Cómo trabajamos</a>
+      <a href="#contacto"><span class="mobmenu__num">/04</span>Contacto</a>
     </nav>
     <div class="mobmenu__foot">
       <div class="lang lang--dark" aria-label="Idioma">
@@ -257,6 +259,93 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="2"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             Crecer solo a fuerza de más gente
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section__rule"><span class="section__progress"></span></div>
+        <p class="mono-label scramble">/Proyectos</p>
+        <div class="section__head">
+          <h2 class="section__title reveal">Qué construimos</h2>
+          <p class="section__sub reveal" style="--d:.1s">
+            Tres sistemas que muestran cómo resolvemos un problema
+            concreto de punta a punta.
+          </p>
+        </div>
+
+        <div class="projects">
+          <article class="project reveal">
+            <div class="project__copy">
+              <p class="mono-label project__kicker">/01 — RRHH · Operaciones</p>
+              <h3 class="project__title">Agente de trámites internos</h3>
+              <p class="project__text"><strong>El problema:</strong> solicitudes, licencias y consultas del personal que se acumulan en mails y chats, y un equipo administrativo que pierde horas clasificando y persiguiendo papeles.</p>
+              <p class="project__text"><strong>La solución:</strong> un agente que recibe cada solicitud, la clasifica, verifica la documentación, consulta los sistemas internos y la deriva al circuito que corresponde. Las personas siguen decidiendo; el agente hace el trabajo de mesa de entrada, a toda hora.</p>
+              <p class="mono-label project__meta">WhatsApp y mail · Sistemas internos · Supervisión humana</p>
+            </div>
+            <div class="project__art" aria-hidden="true">
+              <svg viewBox="0 0 200 200" fill="none">
+                <g class="art-float"><rect x="18" y="52" width="30" height="21" rx="5" stroke="#8fc5f2" stroke-width="1.5"/></g>
+                <g class="art-float" style="--ad:.5s"><rect x="18" y="89" width="30" height="21" rx="5" fill="url(#pg1)" opacity=".8"/></g>
+                <g class="art-float" style="--ad:1s"><rect x="18" y="126" width="30" height="21" rx="5" stroke="#b9dcf9" stroke-width="1.5" opacity=".7"/></g>
+                <line class="art-beam" x1="54" y1="100" x2="80" y2="100" stroke="#8fc5f2" stroke-width="1.5" stroke-dasharray="3 6"/>
+                <rect class="art-breathe" x="86" y="86" width="28" height="28" rx="7" fill="url(#pg1)" transform="rotate(45 100 100)"/>
+                <line class="art-beam" x1="118" y1="92" x2="146" y2="70" stroke="#8fc5f2" stroke-width="1.5" stroke-dasharray="3 6" opacity=".7"/>
+                <line class="art-beam" x1="118" y1="108" x2="146" y2="130" stroke="#b9dcf9" stroke-width="1.5" stroke-dasharray="3 6" opacity=".6"/>
+                <circle class="radar-dot" cx="158" cy="66" r="8" fill="url(#pg1)"/>
+                <circle class="radar-ping" cx="158" cy="66" r="8" stroke="#8fc5f2" stroke-width="1.5"/>
+                <circle cx="158" cy="134" r="8" stroke="#8fc5f2" stroke-width="1.5"/>
+                <defs><linearGradient id="pg1" x1="0" y1="0" x2="200" y2="200"><stop stop-color="#d2e9fe"/><stop offset="1" stop-color="#8fc5f2"/></linearGradient></defs>
+              </svg>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project__copy">
+              <p class="mono-label project__kicker">/02 — Ventas · Marketing</p>
+              <h3 class="project__title">Motor de generación de demanda</h3>
+              <p class="project__text"><strong>El problema:</strong> prospección manual — listas frías, poca personalización y un seguimiento que depende de la memoria de cada vendedor.</p>
+              <p class="project__text"><strong>La solución:</strong> un sistema que identifica empresas objetivo, enriquece los datos, personaliza el contacto y sostiene el seguimiento midiendo cada paso. El equipo comercial llega a la conversación con el trabajo previo hecho.</p>
+              <p class="mono-label project__meta">Identificación · Enriquecimiento · Seguimiento medido</p>
+            </div>
+            <div class="project__art" aria-hidden="true">
+              <svg viewBox="0 0 200 200" fill="none">
+                <circle class="art-breathe" cx="100" cy="100" r="72" stroke="url(#pg2)" stroke-width="1.5"/>
+                <circle class="art-breathe" style="--ad:.5s" cx="100" cy="100" r="46" stroke="url(#pg2)" stroke-width="1.5" opacity=".6"/>
+                <circle class="art-breathe" style="--ad:1s" cx="100" cy="100" r="22" stroke="url(#pg2)" stroke-width="1.5" opacity=".4"/>
+                <circle class="radar-dot" cx="100" cy="100" r="8" fill="url(#pg2)"/>
+                <circle class="radar-ping" cx="100" cy="100" r="8" stroke="#8fc5f2" stroke-width="1.5"/>
+                <g class="art-block"><circle cx="100" cy="36" r="5" fill="#8fc5f2"/></g>
+                <g class="art-block" style="--ad:1.3s"><circle cx="158" cy="124" r="5" fill="#b9dcf9"/></g>
+                <g class="art-block" style="--ad:2.6s"><circle cx="44" cy="130" r="5" fill="#5ba8e8"/></g>
+                <defs><linearGradient id="pg2" x1="0" y1="0" x2="200" y2="200"><stop stop-color="#8fc5f2"/><stop offset="1" stop-color="#d2e9fe"/></linearGradient></defs>
+              </svg>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project__copy">
+              <p class="mono-label project__kicker">/03 — Contenido · Media</p>
+              <h3 class="project__title">Línea de producción de contenido</h3>
+              <p class="project__text"><strong>El problema:</strong> horas de material grabado que nunca se convierten en piezas publicables, porque editar, subtitular y publicar consume al equipo.</p>
+              <p class="project__text"><strong>La solución:</strong> un pipeline que detecta los mejores segmentos, los edita, los subtitula y los deja listos para publicar. De material crudo a piezas en serie, con control editorial humano.</p>
+              <p class="mono-label project__meta">Video · Edición automática · Subtitulado</p>
+            </div>
+            <div class="project__art" aria-hidden="true">
+              <svg viewBox="0 0 200 200" fill="none">
+                <rect x="20" y="58" width="160" height="40" rx="9" stroke="url(#pg3)" stroke-width="1.5"/>
+                <g class="art-block"><rect x="28" y="66" width="30" height="24" rx="5" fill="url(#pg3)" opacity=".85"/></g>
+                <g class="art-block" style="--ad:1s"><rect x="64" y="66" width="30" height="24" rx="5" stroke="#8fc5f2" stroke-width="1.5"/></g>
+                <g class="art-block" style="--ad:2s"><rect x="100" y="66" width="30" height="24" rx="5" fill="url(#pg3)" opacity=".5"/></g>
+                <g class="art-block" style="--ad:3s"><rect x="136" y="66" width="30" height="24" rx="5" stroke="#b9dcf9" stroke-width="1.5" opacity=".7"/></g>
+                <line class="art-beam" x1="100" y1="102" x2="100" y2="128" stroke="#8fc5f2" stroke-width="1.5" stroke-dasharray="3 6"/>
+                <g class="art-float"><rect x="68" y="132" width="64" height="34" rx="9" fill="url(#pg3)" opacity=".9"/></g>
+                <defs><linearGradient id="pg3" x1="20" y1="58" x2="180" y2="166"><stop stop-color="#d2e9fe"/><stop offset="1" stop-color="#8fc5f2"/></linearGradient></defs>
+              </svg>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -426,6 +515,7 @@
         </div>
         <div class="footer__col">
           <p class="mono-label mono-label--dark scramble">Navegación</p>
+          <a class="footer__link" href="#proyectos">Proyectos</a>
           <a class="footer__link" href="#servicios">Servicios</a>
           <a class="footer__link" href="#proceso">Cómo trabajamos</a>
           <a class="footer__link" href="#contacto">Contacto</a>
