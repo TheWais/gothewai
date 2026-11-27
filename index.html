@@ -19,7 +19,8 @@
         var here = location.pathname.indexOf('/en') === 0 ? 'en' : 'es';
         var pref = localStorage.getItem('wai-lang');
         var want = pref || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
-        if (want !== here) location.replace(want === 'en' ? '/en/' : '/');
+        // conserva query (UTMs de campañas) y hash al redirigir
+        if (want !== here) location.replace((want === 'en' ? '/en/' : '/') + location.search + location.hash);
       } catch (e) {}
     })();
   </script>

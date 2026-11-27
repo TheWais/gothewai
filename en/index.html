@@ -19,7 +19,8 @@
         var here = location.pathname.indexOf('/en') === 0 ? 'en' : 'es';
         var pref = localStorage.getItem('wai-lang');
         var want = pref || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
-        if (want !== here) location.replace(want === 'en' ? '/en/' : '/');
+        // conserva query (UTMs de campañas) y hash al redirigir
+        if (want !== here) location.replace((want === 'en' ? '/en/' : '/') + location.search + location.hash);
       } catch (e) {}
     })();
   </script>
@@ -251,7 +252,7 @@
         <div class="section__rule"><span class="section__progress"></span></div>
         <p class="mono-label scramble">/Projects</p>
         <div class="section__head">
-          <h2 class="section__title reveal">What we've built</h2>
+          <h2 class="section__title reveal">What we build</h2>
           <p class="section__sub reveal" style="--d:.1s">
             Three systems that show how we take one concrete
             problem end to end.
