@@ -146,50 +146,6 @@
   });
 
   /* ============================================================
-     CHAT — la conversación se escribe una sola vez: el primer
-     mensaje ya está puesto, aparecen las dos respuestas y al final
-     queda fijo un typing azul (el cliente por escribir de nuevo)
-     ============================================================ */
-  const chatEl = document.getElementById('chat');
-  if (chatEl && !prefersReduced) {
-    const msgs = Array.from(chatEl.querySelectorAll('.chat__msg'));
-    const typing = chatEl.querySelector('.chat__typing');
-    const TYPE = 1000, GAP = 550;
-    chatEl.classList.add('chat--live');
-
-    function step(i) {
-      if (i >= msgs.length) {
-        // estado final: typing azul persistente debajo del último mensaje
-        const last = msgs[msgs.length - 1];
-        typing.classList.add('chat__typing--out');
-        typing.style.top = last.offsetTop + last.offsetHeight + 12 + 'px';
-        typing.style.left = 'auto';
-        typing.style.right = '0';
-        typing.classList.add('is-shown');
-        return;
-      }
-      const isOut = msgs[i].classList.contains('chat__msg--out');
-      typing.classList.toggle('chat__typing--out', isOut);
-      // flota sobre el hueco del mensaje que está por aparecer
-      typing.style.top = msgs[i].offsetTop + 'px';
-      typing.style.left = isOut ? 'auto' : '0';
-      typing.style.right = isOut ? '0' : 'auto';
-      typing.classList.add('is-shown');
-      setTimeout(() => {
-        typing.classList.remove('is-shown');
-        msgs[i].classList.add('is-shown');
-        setTimeout(() => step(i + 1), GAP);
-      }, TYPE);
-    }
-
-    // Arranca cuando el sitio ya se reveló (post-intro)
-    (function waitReady() {
-      if (body.classList.contains('ready')) setTimeout(() => step(1), 900);
-      else setTimeout(waitReady, 200);
-    })();
-  }
-
-  /* ============================================================
      OBSERVERS — reveals, progress rules, scrambles
      ============================================================ */
   const reveals = document.querySelectorAll('.reveal');

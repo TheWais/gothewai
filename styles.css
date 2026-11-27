@@ -316,21 +316,12 @@ body.menu-open .mobmenu__foot { opacity: 1; transform: translateY(0); }
 
 /* ---------- hero ---------- */
 .hero { padding-top: clamp(7rem, 14vh, 10rem); }
-/* composición en dos columnas: todo el copy alineado a la izquierda,
-   el chat centrado verticalmente a la derecha */
-.hero__grid {
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: clamp(2rem, 5vw, 5rem);
-  align-items: center;
-}
 .hero__title {
   font-family: var(--font-heading);
   font-weight: 700;
-  /* titular más largo que el original: escala editorial para que las
-     tres líneas entren sin quebrar en la columna del hero */
-  font-size: clamp(1.9rem, 4.3vw, 3.4rem);
-  line-height: 1.05;
+  /* tipografía monumental: el titular es el protagonista del hero */
+  font-size: clamp(1.82rem, 6.2vw, 5rem);
+  line-height: 1.02;
   letter-spacing: -0.04em;
 }
 /* reveal por líneas: cada línea emerge desde una máscara con recorte */
@@ -348,7 +339,6 @@ body.menu-open .mobmenu__foot { opacity: 1; transform: translateY(0); }
   transition-delay: var(--d, 0s);
 }
 body.ready .line__inner { transform: translateY(0); }
-.hero__card { width: min(450px, 100%); justify-self: end; }
 .hero__lead {
   color: var(--muted);
   font-size: clamp(1rem, 1.3vw, 1.15rem);
@@ -383,111 +373,6 @@ body.ready .line__inner { transform: translateY(0); }
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
-}
-
-/* ---------- chat mockup (light) ---------- */
-.chat {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 20px 50px -20px rgba(19, 19, 19, 0.15);
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-.chat__body {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-/* en modo live se reserva la fila del typing final persistente */
-.chat--live .chat__body { padding-bottom: 3.1rem; }
-/* modo live: todos los mensajes ocupan su lugar definitivo desde el
-   inicio (visibility) — la caja nunca cambia de tamaño ni de posición */
-.chat--live .chat__msg { visibility: hidden; }
-.chat--live .chat__msg.is-shown {
-  visibility: visible;
-  animation: msgIn 0.45s var(--spring) both;
-}
-/* el typing flota sobre el hueco del próximo mensaje (JS lo posiciona) */
-.chat--live .chat__typing {
-  position: absolute;
-  visibility: hidden;
-}
-.chat--live .chat__typing.is-shown {
-  visibility: visible;
-  animation: msgIn 0.45s var(--spring) both;
-}
-@keyframes msgIn {
-  from { opacity: 0; transform: translateY(8px) scale(0.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-/* typing del lado del cliente: burbuja azul */
-.chat__typing--out {
-  background: var(--blue);
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 4px;
-}
-.chat__typing--out span { background: rgba(19, 19, 19, 0.4); }
-/* sin JS el chat queda estático: los 3 mensajes + typing azul al final */
-.chat:not(.chat--live) .chat__typing {
-  background: var(--blue);
-  align-self: flex-end;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 4px;
-}
-.chat:not(.chat--live) .chat__typing span { background: rgba(19, 19, 19, 0.4); }
-.chat__head {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--surface-2);
-}
-.chat__dot { width: 8px; height: 8px; border-radius: 50%; background: #34c759; }
-.chat__name { font-size: 0.9rem; font-weight: 600; }
-.chat__msg {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
-  max-width: 88%;
-}
-/* el primer mensaje ya está escrito desde el arranque */
-.chat--live .chat__msg:first-child { visibility: visible; }
-.chat__msg--in {
-  background: var(--surface-2);
-  border-bottom-left-radius: 4px;
-  align-self: flex-start;
-}
-.chat__msg--out {
-  background: var(--blue);
-  border-bottom-right-radius: 4px;
-  align-self: flex-end;
-}
-.chat__typing {
-  display: flex;
-  gap: 4px;
-  padding: 0.55rem 0.8rem;
-  background: var(--surface-2);
-  border-radius: 12px;
-  border-bottom-left-radius: 4px;
-  align-self: flex-start;
-}
-.chat__typing span {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--dim);
-  animation: typing 1.2s infinite ease-in-out;
-}
-.chat__typing span:nth-child(2) { animation-delay: 0.15s; }
-.chat__typing span:nth-child(3) { animation-delay: 0.3s; }
-@keyframes typing {
-  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
-  30% { opacity: 1; transform: translateY(-3px); }
 }
 
 /* ---------- pain points ---------- */
@@ -542,11 +427,8 @@ body.ready .line__inner { transform: translateY(0); }
   transition: transform 1.2s cubic-bezier(0.7, 0, 0.2, 1);
 }
 .section__rule.is-visible .section__progress { transform: translateX(0); }
+/* título y subtítulo apilados, alineados a la izquierda */
 .section__head {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: end;
   margin-top: 2.5rem;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
@@ -559,9 +441,9 @@ body.ready .line__inner { transform: translateY(0); }
 }
 .section__sub {
   color: var(--muted);
-  font-size: 1.02rem;
-  max-width: 46ch;
-  justify-self: end;
+  font-size: 1.05rem;
+  max-width: 52ch;
+  margin-top: 1.25rem;
 }
 
 /* ---------- proyectos ---------- */
@@ -836,10 +718,6 @@ body.ready .line__inner { transform: translateY(0); }
   .nav__links { display: none; }
   .nav .lang { display: none; }
   .nav__burger { display: flex; }
-  .hero__grid { grid-template-columns: 1fr; }
-  .hero__card { display: none; }
-  .section__head { grid-template-columns: 1fr; }
-  .section__sub { justify-self: start; }
   .project { grid-template-columns: 1fr; gap: 1.5rem; }
   .project__art { order: -1; width: 170px; justify-self: start; }
   .cards { grid-template-columns: 1fr; }
@@ -869,12 +747,10 @@ body.ready .line__inner { transform: translateY(0); }
   body.preload { overflow: auto; }
   .appear, .reveal { opacity: 1; transform: none; transition: none; }
   .marquee__track { animation: none; }
-  .chat__typing span { animation: none; }
   .section__progress { transform: none; transition: none; }
   .story__svg, .story__step { transition: none; }
   .btn__arrow { transition: none; }
   .radar-sweep, .radar-dot, .radar-ping, .art-breathe, .art-float,
   .art-beam, .art-block, .art-orbit, .art-satellite { animation: none; }
   .line__inner { transform: none; transition: none; }
-  .chat--live .chat__msg.is-shown, .chat--live .chat__typing.is-shown { animation: none; }
 }
