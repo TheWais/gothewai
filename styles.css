@@ -446,6 +446,31 @@ body.ready .line__inner { transform: translateY(0); }
   max-width: 52ch;
   margin-top: 1.25rem;
 }
+/* titulares de dos frases: un escalón más chico para respirar */
+.section__title--long {
+  font-size: clamp(1.7rem, 3.4vw, 2.9rem);
+  line-height: 1.12;
+}
+
+/* ---------- pilares (nosotros) ---------- */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.pillar {
+  border-top: 1px solid var(--border);
+  padding-top: 1.4rem;
+}
+.pillar .mono-label { color: var(--dim); margin-bottom: 0.9rem; }
+.pillar__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+.pillar__text { color: var(--muted); font-size: 0.98rem; }
 
 /* ---------- proyectos ---------- */
 .project {
@@ -721,6 +746,7 @@ body.ready .line__inner { transform: translateY(0); }
   .nav__burger { display: flex; }
   .project { grid-template-columns: 1fr; gap: 1.5rem; }
   .project__art { order: -1; width: 170px; justify-self: start; }
+  .pillars { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
   .card--wide { grid-column: auto; }
   .footer__grid { grid-template-columns: 1fr; }
