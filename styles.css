@@ -328,9 +328,10 @@ body.menu-open .mobmenu__foot { opacity: 1; transform: translateY(0); }
 .hero__title .line {
   display: block;
   overflow: hidden;
-  /* aire para los descendentes (y, p) sin que la máscara los recorte */
-  padding-bottom: 0.09em;
-  margin-bottom: -0.09em;
+  /* aire para los descendentes (g, j, p) sin que la máscara los
+     recorte: a escala monumental necesitan más ventana */
+  padding-bottom: 0.18em;
+  margin-bottom: -0.18em;
 }
 .line__inner {
   display: inline-block;
