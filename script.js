@@ -89,6 +89,12 @@
     el.dataset.scrambling = '1';
     const original = el.dataset.orig || el.textContent;
     el.dataset.orig = original;
+    // Congela el ancho del elemento durante la animación: el canje de
+    // glifos nunca puede cambiar su caja ni desplazar a los vecinos
+    const prevWidth = el.style.width;
+    const prevDisplay = el.style.display;
+    if (getComputedStyle(el).display === 'inline') el.style.display = 'inline-block';
+    el.style.width = el.getBoundingClientRect().width + 'px';
     const len = original.length;
     const DURATION = 900;
     const start = performance.now();
@@ -103,6 +109,8 @@
       if (t < 1) requestAnimationFrame(tick);
       else {
         el.textContent = original;
+        el.style.width = prevWidth;
+        el.style.display = prevDisplay;
         delete el.dataset.scrambling;
       }
     }
