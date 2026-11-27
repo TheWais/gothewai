@@ -122,19 +122,9 @@
     raf = requestAnimationFrame(tick);
   }
 
-  // Scramble al pasar el mouse por los links del nav. Al saltar a otro
-  // link, el anterior corta su animación: solo anima la palabra activa
-  if (!prefersReduced) {
-    const navLinks = document.querySelectorAll('.nav__links a');
-    navLinks.forEach((a) => {
-      a.addEventListener('mouseenter', () => {
-        navLinks.forEach((o) => {
-          if (o !== a && o.__scrambleStop) o.__scrambleStop();
-        });
-        scramble(a);
-      });
-    });
-  }
+  // Nota: el scramble en hover del nav se quitó a pedido del dueño
+  // (saltos de layout en algunos entornos). El efecto queda solo en
+  // los labels de sección al entrar en viewport, donde es estable.
 
   /* ============================================================
      MEDICIÓN — eventos de conversión hacia Vercel Analytics.
