@@ -98,6 +98,16 @@
     const len = original.length;
     const DURATION = 900;
     const start = performance.now();
+    let raf;
+    // corta la animación y restaura el estado final al instante
+    el.__scrambleStop = () => {
+      cancelAnimationFrame(raf);
+      el.textContent = original;
+      el.style.width = prevWidth;
+      el.style.display = prevDisplay;
+      delete el.dataset.scrambling;
+      delete el.__scrambleStop;
+    };
     function tick(now) {
       const t = Math.min((now - start) / DURATION, 1);
       const solved = Math.floor(t * len);
@@ -106,21 +116,23 @@
         out += original[i] === ' ' ? ' ' : GLYPHS[(Math.random() * GLYPHS.length) | 0];
       }
       el.textContent = out;
-      if (t < 1) requestAnimationFrame(tick);
-      else {
-        el.textContent = original;
-        el.style.width = prevWidth;
-        el.style.display = prevDisplay;
-        delete el.dataset.scrambling;
-      }
+      if (t < 1) raf = requestAnimationFrame(tick);
+      else if (el.__scrambleStop) el.__scrambleStop();
     }
-    requestAnimationFrame(tick);
+    raf = requestAnimationFrame(tick);
   }
 
-  // Scramble al pasar el mouse por los links del nav
+  // Scramble al pasar el mouse por los links del nav. Al saltar a otro
+  // link, el anterior corta su animación: solo anima la palabra activa
   if (!prefersReduced) {
-    document.querySelectorAll('.nav__links a').forEach((a) => {
-      a.addEventListener('mouseenter', () => scramble(a));
+    const navLinks = document.querySelectorAll('.nav__links a');
+    navLinks.forEach((a) => {
+      a.addEventListener('mouseenter', () => {
+        navLinks.forEach((o) => {
+          if (o !== a && o.__scrambleStop) o.__scrambleStop();
+        });
+        scramble(a);
+      });
     });
   }
 
